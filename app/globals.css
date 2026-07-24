@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand primary ("flagship" ink + gold) */
+  --color-ink: #1b1815;
+  --color-ink-elevated: #272220;
+  --color-warmth-gold: #d4af37;
+  --color-warmth-gold-deep: #b8933f;
+  --color-warmth-cream: #f3e5ab;
+
+  /* Neutrals */
+  --color-background: #fffbf7;
+  --color-surface: #ffffff;
+  --color-surface-muted: #fbf3ec;
+  --color-text-primary: #33302c;
+  --color-text-secondary: #7a736a;
+  --color-divider: #f0e6dc;
+
+  /* Semantic */
+  --color-error: #c9564a;
+  --color-success: #6fa97f;
+
+  /* Context accents (pastel / deep), one per feature category */
+  --color-blush: #f6dcd3;
+  --color-blush-deep: #e7a99a;
+  --color-sage: #d8e6dc;
+  --color-sage-deep: #7fa88f;
+  --color-lavender: #e7e0f2;
+  --color-lavender-deep: #a898c9;
+  --color-sky-blue: #dce9f5;
+  --color-sky-blue-deep: #7ca8c9;
+  --color-peach: #f7e3d3;
+  --color-peach-deep: #d9a876;
+  --color-butter: #f7efc9;
+  --color-butter-deep: #c9a83f;
+  --color-mint: #d9efe2;
+  --color-mint-deep: #5fae8c;
+  --color-lilac: #eae0f3;
+  --color-lilac-deep: #af8fcb;
+  --color-terracotta: #f3ded2;
+  --color-terracotta-deep: #c97b54;
+  --color-sand: #f0e6d2;
+  --color-sand-deep: #b08d57;
+  --color-slate: #e1e6ea;
+  --color-slate-deep: #5b7285;
+  --color-coral: #f6ddd6;
+  --color-coral-deep: #d97e62;
+
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+
+  --shadow-soft: 0 8px 20px 0 rgb(58 46 31 / 0.06);
+  --shadow-raised: 0 12px 28px 0 rgb(58 46 31 / 0.1);
+  --shadow-glass: 0 16px 36px 0 rgb(27 24 21 / 0.14);
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-ink-elevated: var(--color-ink-elevated);
+  --color-warmth-gold: var(--color-warmth-gold);
+  --color-warmth-gold-deep: var(--color-warmth-gold-deep);
+  --color-warmth-cream: var(--color-warmth-cream);
+
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-surface-muted: var(--color-surface-muted);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-divider: var(--color-divider);
+
+  --color-error: var(--color-error);
+  --color-success: var(--color-success);
+
+  --color-blush: var(--color-blush);
+  --color-blush-deep: var(--color-blush-deep);
+  --color-sage: var(--color-sage);
+  --color-sage-deep: var(--color-sage-deep);
+  --color-lavender: var(--color-lavender);
+  --color-lavender-deep: var(--color-lavender-deep);
+  --color-sky-blue: var(--color-sky-blue);
+  --color-sky-blue-deep: var(--color-sky-blue-deep);
+  --color-peach: var(--color-peach);
+  --color-peach-deep: var(--color-peach-deep);
+  --color-butter: var(--color-butter);
+  --color-butter-deep: var(--color-butter-deep);
+  --color-mint: var(--color-mint);
+  --color-mint-deep: var(--color-mint-deep);
+  --color-lilac: var(--color-lilac);
+  --color-lilac-deep: var(--color-lilac-deep);
+  --color-terracotta: var(--color-terracotta);
+  --color-terracotta-deep: var(--color-terracotta-deep);
+  --color-sand: var(--color-sand);
+  --color-sand-deep: var(--color-sand-deep);
+  --color-slate: var(--color-slate);
+  --color-slate-deep: var(--color-slate-deep);
+  --color-coral: var(--color-coral);
+  --color-coral-deep: var(--color-coral-deep);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+
+  --shadow-soft: var(--shadow-soft);
+  --shadow-raised: var(--shadow-raised);
+  --shadow-glass: var(--shadow-glass);
+
+  --font-display: var(--font-outfit);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-divider);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  ::selection {
+    background: var(--color-warmth-gold);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-warmth-gold-deep);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .bg-hero-gradient {
+    background-image: linear-gradient(
+      135deg,
+      var(--color-ink) 0%,
+      var(--color-ink-elevated) 55%,
+      var(--color-warmth-gold-deep) 100%
+    );
+  }
+
+  .bg-journey-gradient {
+    background-image: linear-gradient(
+      135deg,
+      var(--color-warmth-gold) 0%,
+      var(--color-blush-deep) 100%
+    );
+  }
+
+  .bg-calm-gradient {
+    background-image: linear-gradient(
+      135deg,
+      var(--color-lavender) 0%,
+      var(--color-blush) 100%
+    );
+  }
+
+  .bg-health-gradient {
+    background-image: linear-gradient(
+      135deg,
+      var(--color-sage) 0%,
+      var(--color-warmth-cream) 100%
+    );
+  }
+
+  .text-gradient-gold {
+    background-image: linear-gradient(
+      135deg,
+      var(--color-warmth-cream) 0%,
+      var(--color-warmth-gold) 45%,
+      var(--color-warmth-gold-deep) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 1rem;
+    z-index: 100;
+    background: var(--color-ink);
+    color: var(--color-warmth-cream);
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .skip-link:focus {
+    left: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
