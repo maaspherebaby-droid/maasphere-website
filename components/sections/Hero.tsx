@@ -37,15 +37,21 @@ export function Hero() {
           </Reveal>
           <Reveal delay={0.24}>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Button href="/contact" variant="primary" className="bg-warmth-gold text-ink hover:bg-warmth-cream">
-                Launching Soon
+              <Button
+                href={siteConfig.appStoreUrl}
+                target="_blank" rel="noopener noreferrer"
+                variant="primary"
+                className="bg-warmth-gold text-ink hover:bg-warmth-cream"
+              >
+                Download on the App Store
               </Button>
               <Button
-                href="/features"
+                href={siteConfig.playStoreUrl}
+                target="_blank" rel="noopener noreferrer"
                 variant="secondary"
                 className="border-white/20 bg-white/5 text-warmth-cream hover:border-warmth-gold hover:bg-white/10"
               >
-                Explore Features
+                Get it on Google Play
               </Button>
             </div>
           </Reveal>

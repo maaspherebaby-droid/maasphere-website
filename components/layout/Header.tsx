@@ -38,7 +38,9 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href="/contact">Launching Soon</Button>
+          <Button href={siteConfig.appStoreUrl} target="_blank" rel="noopener noreferrer">
+            Download App
+          </Button>
         </div>
 
         <MobileNav />

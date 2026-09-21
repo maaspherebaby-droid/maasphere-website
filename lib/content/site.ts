@@ -5,6 +5,8 @@ export const siteConfig = {
     "MaaSphere is an AI-powered maternal and early-childhood wellbeing platform — pregnancy timeline, 3D baby viewer, kick counter, medicine tracker, and Dhruv AI, all in one calm, trusted space.",
   url: "https://maasphere.in",
   supportEmail: "support@maasphere.in",
+  appStoreUrl: "https://apps.apple.com/in/app/maasphere/id6797445464",
+  playStoreUrl: "https://play.google.com/store/apps/details?id=com.maasphere.mobile",
   legalEntity: "Elegance Professional (Partnership Firm)",
 };
 

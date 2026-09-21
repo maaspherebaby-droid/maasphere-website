@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { primaryNav } from "@/lib/content/site";
+import { primaryNav, siteConfig } from "@/lib/content/site";
 import { Button } from "@/components/ui/Button";
 
 export function MobileNav() {
@@ -42,8 +42,13 @@ export function MobileNav() {
               ))}
             </ul>
           </nav>
-          <Button href="/contact" className="mt-4 w-full" onClick={() => setOpen(false)}>
-            Launching Soon
+          <Button
+            href={siteConfig.appStoreUrl}
+            target="_blank" rel="noopener noreferrer"
+            className="mt-4 w-full"
+            onClick={() => setOpen(false)}
+          >
+            Download App
           </Button>
         </div>
       ) : null}
